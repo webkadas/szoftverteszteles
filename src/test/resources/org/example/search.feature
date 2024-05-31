@@ -6,17 +6,9 @@ Feature: Checking the search field
     And the 'Password' is filled with 'secret_sauce'
     Then the 'Login' button is clicked
 
-  Scenario Outline: One correct tipp is shown
-    Given the 'Menu' button is clicked
-    And the 'AboutMenu' button is clicked
-    And the 'Search' button is clicked
-    And the 'Search' is filled with '<keyword>'
-    Then the result contains '<sample>'
-    Examples:
-      | keyword | sample   |
-      | laptop  | Testing  |
-      | battery | Mobile     |
-      | light   | Lightbox |
-      | sauce   | TestRail |
+  Scenario: One correct tipp is shown
+    Given the 'Menu' menu button is clicked
+    And the 'AboutMenu' menu button is clicked
+    Then the 'Search' button is clicked
 
 

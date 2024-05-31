@@ -77,7 +77,7 @@ public class HomePage {
             "Lastname", By.id("last-name"),
             "Postalcode", By.id("postal-code"),
             "ContactEmail", By.id("Email"),
-            "Search", By.cssSelector("body > div.MuiDrawer-root.MuiDrawer-modal.MuiModal-root.css-y28f86 > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorRight.css-11d19f4 > div > div > div > div.MuiStack-root.css-zg1vud > div > div")
+            "Search", By.cssSelector("#__next > header > div > div > div.PrivateHiddenCss-root.PrivateHiddenCss-mdDown.css-9sga2b > div > button")
 
     );
     private Map<String, By> buttons = Map.of(
@@ -85,7 +85,7 @@ public class HomePage {
             "Cart", By.cssSelector("#shopping_cart_container > a"),
             "Checkout",By.id("checkout"),
             "Continue",By.id("continue"),
-            "Search",By.cssSelector("#__next > header > div > div > div.PrivateHiddenCss-root.PrivateHiddenCss-mdDown.css-9sga2b > div > button"),
+            "Search",By.cssSelector("#__next > header > div > div > div.PrivateHiddenCss-root.PrivateHiddenCss-mdDown.css-9sga2b > div > div.MuiBox-root.css-1ay9vb9 > a > button"),
             "GetDemo",By.className("mktoButton"),
             "AddToCart",By.id("add-to-cart"),
             "BackToProduct",By.id("back-to-products"),
@@ -176,4 +176,9 @@ public class HomePage {
         return driver.findElement(buttons.get(button)).isDisplayed();
     }
 
+    public String getDivElement(){
+        WebElement divElement = driver.findElement(By.id("login_credentials"));
+        //String actualContent = divElement.getText();
+        return divElement.getText();
+    }
 }
